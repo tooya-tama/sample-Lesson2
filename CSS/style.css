@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  background-color: #f4f9ff;
+  color: #333;
+  font-size: 0.875rem;
+}
+img {
+  max-width: 100%;
+}
+/* サイト全体のコンテンツ幅を設定 「margin: 0 auto」で中央に配置*/
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* 中のコンテンツ部分の最大幅を設定 「margin: 0 auto」で中央に配置*/
+.inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* 各セクションの見出し用のクラスです。各セクションの見出しは同じデザインなので、このクラスを共通で使用*/
+.section-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+/* 「margin-top: 60px;」でヘッダー上部に余白 */
+#header {
+  margin-top: 60px;
+}
+/*
+h1タグ
+line-height にh1タグの高さよりも小さい値「1px」を指定することで、
+h1タグの上下の余白が消えるため、ロゴ画像の高さと揃う
+「line-height: 0;」を指定してもOKです
+*/
+#header .site-title {
+  width: 160px;
+  line-height: 1px;
+  margin-bottom: 15px;
+}
+/* aタグのリンク範囲を親要素のサイズに広げる */
+#header .site-title a {
+  display: block;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+/* 「margin-bottom: 60px;」でメインビジュアルの下に余白を設定 */
+#mainvisual {
+  margin-bottom: 60px;
+}
+
+/*-------------------------------------------
+Index
+-------------------------------------------*/
+#index {
+  background-color: #fff;
+  padding: 30px 0;
+  margin-bottom: 60px;
+}
+/*
+olタグはリストの先頭に番号がつくので、その分だけ左に移動
+※番号を消したい場合は、「list-style-type: none;」を設定
+*/
+#index .index-list {
+  margin-left: 20px;
+}
+#index .index-list li {
+  margin-bottom: 20px;
+}
+/* リストの最後は下にマージンをつけない 目次の最後の行だけ「margin-bottom: 0;」でテキストの下に余白が入らないように　*/
+#index .index-list li:last-child {
+  margin-bottom: 0;
+}
+
+/*-------------------------------------------
+Detail
+-------------------------------------------*/
+#detail {
+  margin-bottom: 100px;
+}
+/* 「display: flex;」で画像とテキストを横並びに配置 */
+#detail .content {
+  display: flex;
+  align-items: flex-start;
+}
+#detail .content .title {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+/* 画像はwidthで横幅を設定して広がりすぎないようにする */
+#detail .content .img {
+  width: 270px;
+  margin-right: 60px;
+}
+#detail .content .text p {
+  margin-bottom: 20px;
+}
+/* 書籍情報はdlタグに「display: flex;」を設定して、dtタグとddタグを横並びに配置　また、「flex-wrap: wrap;」を設定して、dtタグとddタグが100%になったら横並びが折り返されるようにする */
+#detail .content dl {
+  display: flex;      /* dt、ddを横並びにする */
+  flex-wrap: wrap;    /* dtとddが100%になったら、横並びを折り返す */
+  padding: 16px 0;
+  margin-bottom: 25px;
+  border-top: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+}
+#detail .content dt {
+  width: 25%;
+}
+#detail .content dd {
+  width: 75%;
+}
+#detail .content .link {
+  color: #333;
+}
+/* 「オンラインストアで見る」リンクのマウスオーバー時の動きを設定　
+今回は「opacity: 0.8;」を設定して少しだけ透過させている
+（※マウスオーバー時の動作については、仕様書内で特に指示がない場合は0.8や0.7の透過を設定しておくと良い） */
+#detail .content .link:hover {
+  opacity: 0.8;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+/* フォントサイズと上下の余白を設定 */
+#footer {
+  font-size: 0.625rem;
+  padding: 15px 0;
+}
+
+/*-------------------------------------------
+SP　　　ブレイクポイントを設定します。コーディング仕様に従い、PCとスマホのレイアウトを1024pxで切り替え（1024px以下がスマホで1025px以上がPC）
+-------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0 40px;
+  }
+
+  /*-------------------------------------------
+  ヘッダー
+  -------------------------------------------*/
+   /* スマホの場合は、「padding: 0 10px;」で両サイドの余白を設定 */
+  #header {
+    padding: 0 10px;
+  }
+
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+  /* スマホの場合は「padding: 0 10px;」で両サイドの余白を設定 */
+  #mainvisual {
+    padding: 0 10px;
+  }
+
+  /*-------------------------------------------
+  Detail
+  -------------------------------------------*/
+  /* スマホの場合は、「flex-direction: column;」を設定して縦並び */
+  #detail .content {
+    flex-direction: column;  /* 縦並びにする */
+  }
+  /* スマホの場合は、「width: 100%;」を設定して横幅いっぱいまで広がるようにする */
+  #detail .content .img {
+    width: 100%;
+    margin: 0 0 25px 0;
+  }
+}

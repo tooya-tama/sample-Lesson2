@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <!--  metaタグ title、descriptionは基本必須で設定　-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHOTO BOOK</title>
+    <link rel="icon" href="img/favicon.ico" >
+    <!-- リセットCSS　 本サイトでは、「ress.min.css」を使用しています。リセットCSSは色々なものがあるので、自分が使いやすいものを選んだり、案件によって使い分け-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- containerクラス　コンテンツ全体の最大幅を設定して中央に配置するためのクラス。※containerというクラス名は任意ですが、一般的に「container」や「wrapper」などのクラス名がよく使われる -->
+    <div class="container">
+        <!--  ヘッダー全体をheaderタグで囲む　-->
+        <header  id="header">
+            <!--  ロゴ全体をh1タグで囲む。さらにロゴ画像をaタグで囲み、トップページへのリンクを張る　-->
+            <h1 class="site-title">
+                <a href="index.html"><img src="img/logo.svg" alt="PHOTO BOOK"></a>
+            </h1>
+        </header>
+    
+        <main>
+            <!--  メインビジュアルは、画像をdivタグで囲む　-->
+            <div id="mainvisual">
+                <img src="img/mainvisual.jpg" alt="テキストテキストテキスト"> 
+            </div>
+            <!--  全体をsectionタグで囲む　-->
+            <section id="index">
+                <!--  inner　コンテンツ部分をdivタグで囲み、中央に配置　-->
+                <div class="inner">
+                    <!--  タイトル　h2タグで囲む　-->
+                    <h2 class="section-title">INDEX</h2>
+                    <!--  目次　順序性のあるリストのため、ol、liタグで記述　-->
+                    <ol class="index-list">
+                        <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+                        <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+                        <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+                        <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+                        <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!--  全体をsectionタグで囲む　-->
+            <section id="detail">
+                <!--  inner コンテンツ部分をdivタグで囲み、中央に配置　-->
+                <div class="inner">
+                    <!--  タイトル　h2タグで囲む　-->
+                    <h2 class="section-title">DETAIL</h2>
+                    <div class="content">
+                        <img class="img" src="img/detail.jpg" alt="">
+                        <div class="text">
+                            <p class="title">タイトルタイトルタイトル</p>
+                            <!--  書籍情報　項目と内容が対になっているので、dl、dt、ddタグを使って記述　-->
+                            <dl>
+                                <dt>著者</dt>
+                                <dd>タイトルタイトルタイトル</dd>
+                                <dt>出版社</dt>
+                                <dd>タイトルタイトルタイトル</dd>
+                                <dt>発行年</dt>
+                                <dd>タイトルタイトルタイトル</dd>
+                            </dl>
+                            <p>
+                                テキストテキストテキストテキストテキストテキスト
+                                テキストテキストテキストテキストテキストテキスト
+                            </p>
+                            <a class="link" href="#" target="_blank" rel="noopener noreferrer">オンラインストアで見る</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <!--  footerタグで囲んだ中にpタグでコピーライトを記述　
+              コピーライトのマークですが、今回は「&copy;」というコードで記述しているが、
+              文字コードでUTF-8を指定している場合は、文字で入力しても大丈夫　-->
+            <p class="inner">&copy;2020 PHOTO BOOK</p>
+        </footer>
+    </div>
+</body>
+</html>
